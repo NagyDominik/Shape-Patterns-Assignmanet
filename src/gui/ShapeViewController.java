@@ -29,7 +29,7 @@ public class ShapeViewController implements Initializable
     private void handleButtonAction(ActionEvent event)
     {
         System.out.println("You clicked!");
-        label.setText("Hello World!");
+        label.setText("Hello Dominik! Teszt commit lesz");
     }
     
     @Override
