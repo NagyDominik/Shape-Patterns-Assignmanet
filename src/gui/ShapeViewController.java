@@ -5,13 +5,20 @@
  */
 package gui;
 
+import bll.Drawer;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 
 /**
  *
@@ -20,22 +27,58 @@ import javafx.scene.control.Label;
 public class ShapeViewController implements Initializable
 {
     
-    @FXML
     private Label label;
     @FXML
-    private Button button;
-    
+    private Canvas Canvas;
     @FXML
-    private void handleButtonAction(ActionEvent event)
+    private ListView<?> shapeList;
+    @FXML
+    private TextField sizeField;
+    @FXML
+    private ChoiceBox<String> selectedShape;
+    @FXML
+    private ChoiceBox<String> selectedPattern;
+    @FXML
+    private Button addShapebtn;
+    @FXML
+    private Button Drawbtn;
+    @FXML
+    private Button clearListbtn;
+    @FXML
+    private Button clearCanvasbtn;
+    
+    private Drawer drawer;
+
+    
+    public ShapeViewController()
     {
-        System.out.println("You clicked!");
-        label.setText("Hello Dominik! Teszt commit lesz");
+        drawer = new Drawer();
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        // TODO
+        
     }    
+
+    @FXML
+    private void addShape(ActionEvent event)
+    {
+    }
+
+    @FXML
+    private void drawShapes(ActionEvent event)
+    {
+    }
+
+    @FXML
+    private void clearList(ActionEvent event)
+    {
+    }
+
+    @FXML
+    private void clearCanvas(ActionEvent event)
+    {
+    }
     
 }
