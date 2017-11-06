@@ -60,4 +60,11 @@ public class Drawer
     {
         shapesInQueue.clear();
     }
+    
+    public void drawShapes()
+    {
+        
+    }
+    
+    
 }

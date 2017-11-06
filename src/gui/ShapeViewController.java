@@ -74,6 +74,7 @@ public class ShapeViewController implements Initializable
     @FXML
     private void drawShapes(ActionEvent event)
     {
+        drawer.drawShapes();
     }
 
     @FXML
