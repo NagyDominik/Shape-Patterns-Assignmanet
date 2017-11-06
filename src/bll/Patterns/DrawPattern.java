@@ -11,7 +11,6 @@ package bll.Patterns;
  */
 public interface DrawPattern
 {    
-    
     /**Returns the X coordinate of the next point where we can place a shape**/
     public double getNextX();
     
