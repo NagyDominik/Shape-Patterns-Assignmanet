@@ -3,25 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package bll.Patterns;
+
+import java.util.Random;
+
+
+
 
 /**
  *
  * @author Dominik
  */
-public class Random implements DrawPattern
+public class RandomPattern implements DrawPattern
 {
-
+    Random rand = new Random();
     @Override
     public double getNextX()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      return rand.nextDouble()*486;
     }
 
     @Override
     public double getNextY()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return rand.nextDouble()*488;
     }
     
 }
