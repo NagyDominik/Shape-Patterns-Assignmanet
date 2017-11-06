@@ -10,17 +10,7 @@ package bll.Patterns;
  * @author Dominik
  */
 public class CrossPattern implements DrawPattern
-{
-    public Grid() {
-        int[][] myX = new int[10][10];
-        myX[0][0]= 5;
-        for(int i =1; i<myX.length;i++)  
-        {
-            myX[0][i] = myX[0][0]+48;
-            
-        }
-    }
-   
+{   
     @Override
     public double getNextX()
     {
