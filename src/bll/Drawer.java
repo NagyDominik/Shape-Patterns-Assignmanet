@@ -28,9 +28,14 @@ public class Drawer
         patterns.addAll(Arrays.asList("Grid", "Cross", "Random"));
     }
     
-    public ArrayList<Shape> getShapesInQueue()
+    public ArrayList<String> getShapesInQueue()
     {
-        return shapesInQueue;
+        ArrayList<String> shapesAsString = new ArrayList();
+        for (Shape shape : shapesInQueue)
+        {
+            shapesAsString.add(shape.getName() + " " + shape.getSize());
+        }
+        return shapesAsString;
     }
 
     public ArrayList<String> getShapes()
@@ -48,4 +53,13 @@ public class Drawer
         this.pattern = pattern;
     }
     
+    public void addShapeToQueue(String shape, int size)
+    {
+        shapesInQueue.add(new Shape(shape, size));
+    }
+    
+    public void ClearQueue()
+    {
+        shapesInQueue.clear();
+    }
 }
