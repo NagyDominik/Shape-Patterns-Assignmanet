@@ -16,21 +16,4 @@ public class Shape
    
     String Name;
     int size;
-
-    public Shape(String Name, int size)
-    {
-        this.Name = Name;
-        this.size = size;
-    }
-
-    public String getName()
-    {
-        return Name;
-    }
-
-    public int getSize()
-    {
-        return size;
-    }
-    
 }
