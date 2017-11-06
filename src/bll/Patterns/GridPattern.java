@@ -9,7 +9,7 @@ package bll.Patterns;
  *
  * @author Dominik
  */
-public class Cross implements DrawPattern
+public class GridPattern implements DrawPattern
 {
 
     @Override

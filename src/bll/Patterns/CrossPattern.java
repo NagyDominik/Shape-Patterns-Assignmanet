@@ -9,7 +9,7 @@ package bll.Patterns;
  *
  * @author Dominik
  */
-public class Grid implements DrawPattern
+public class CrossPattern implements DrawPattern
 {
     public Grid() {
         int[][] myX = new int[10][10];
