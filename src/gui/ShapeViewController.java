@@ -7,13 +7,12 @@ package gui;
 
 import bll.Drawer;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -26,7 +25,7 @@ import javafx.scene.control.TextField;
  */
 public class ShapeViewController implements Initializable
 {
-    
+
     private Label label;
     @FXML
     private Canvas Canvas;
@@ -46,20 +45,18 @@ public class ShapeViewController implements Initializable
     private Button clearListbtn;
     @FXML
     private Button clearCanvasbtn;
-    
+
     private Drawer drawer;
 
-    
     public ShapeViewController()
     {
         drawer = new Drawer();
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        
-    }    
+    }
 
     @FXML
     private void addShape(ActionEvent event)
@@ -80,5 +77,5 @@ public class ShapeViewController implements Initializable
     private void clearCanvas(ActionEvent event)
     {
     }
-    
+
 }

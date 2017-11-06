@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bll.Patterns;
+package bll;
 
 /**
  *
  * @author Dominik
  */
-public interface DrawPattern
-{    
-    public int getNextX();
-    
-    public int getNextY();
-    
+public class Shape
+{
+    String Name;
+    int size;
 }

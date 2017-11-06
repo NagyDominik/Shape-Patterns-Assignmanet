@@ -11,5 +11,17 @@ package bll.Patterns;
  */
 public class Grid implements DrawPattern
 {
+
+    @Override
+    public int getNextX()
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int getNextY()
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
