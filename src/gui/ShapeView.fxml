@@ -2,7 +2,7 @@
 
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
@@ -16,14 +16,14 @@
             <Canvas fx:id="Canvas" height="488.0" style="-fx-border-style: solid inside;" width="486.0" />
          </children>
       </Pane>
-      <ChoiceBox fx:id="selectedShape" layoutX="14.0" layoutY="33.0" prefHeight="25.0" prefWidth="94.0" />
       <ListView fx:id="shapeList" layoutX="128.0" layoutY="33.0" prefHeight="488.0" prefWidth="149.0" />
       <TextField fx:id="sizeField" layoutX="14.0" layoutY="455.0" prefHeight="25.0" prefWidth="94.0" />
       <Label layoutX="14.0" layoutY="425.0" prefHeight="17.0" prefWidth="56.0" text="Size" />
       <Button fx:id="addShapebtn" layoutX="16.0" layoutY="496.0" mnemonicParsing="false" onAction="#addShape" prefHeight="25.0" prefWidth="94.0" text="Add -&gt;" />
-      <ChoiceBox fx:id="selectedPattern" layoutX="302.0" layoutY="539.0" prefHeight="25.0" prefWidth="94.0" />
       <Button fx:id="Drawbtn" layoutX="656.0" layoutY="539.0" mnemonicParsing="false" onAction="#drawShapes" prefHeight="25.0" prefWidth="103.0" text="Draw Shapes" />
       <Button fx:id="clearListbtn" layoutX="156.0" layoutY="539.0" mnemonicParsing="false" onAction="#clearList" prefHeight="25.0" prefWidth="94.0" text="Clear List" />
       <Button fx:id="clearCanvasbtn" layoutX="533.0" layoutY="539.0" mnemonicParsing="false" onAction="#clearCanvas" prefHeight="25.0" prefWidth="94.0" text="Clear Canvas" />
+      <ComboBox fx:id="selectedShape" layoutX="14.0" layoutY="33.0" prefHeight="25.0" prefWidth="103.0" />
+      <ComboBox fx:id="selectedPattern" layoutX="289.0" layoutY="539.0" prefHeight="25.0" prefWidth="94.0" />
    </children>
 </AnchorPane>
