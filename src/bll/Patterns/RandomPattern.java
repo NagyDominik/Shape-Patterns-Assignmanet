@@ -3,31 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package bll.Patterns;
 
 import java.util.Random;
 
-
-
-
 /**
  *
- * @author Dominik
+ * @author Tomasz
  */
 public class RandomPattern implements DrawPattern
 {
+
     Random rand = new Random();
+
     @Override
     public double getNextX()
     {
-      return rand.nextDouble()*486;
+        return rand.nextDouble() * 486;
     }
 
     @Override
     public double getNextY()
     {
-        return rand.nextDouble()*488;
+        return rand.nextDouble() * 488;
     }
-    
+
 }

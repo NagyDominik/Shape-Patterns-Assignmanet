@@ -6,13 +6,13 @@
 package gui;
 
 import bll.Drawer;
-import bll.Shape;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -50,12 +50,15 @@ public class ShapeViewController implements Initializable
 
     public ShapeViewController()
     {
-        drawer = new Drawer();
+        
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
+        drawer = new Drawer();
+        drawer.setContext(Canvas.getGraphicsContext2D());
+        
         selectedShape.getItems().addAll(drawer.getShapes());
         selectedShape.getSelectionModel().selectFirst();
         selectedPattern.getItems().addAll(drawer.getPatterns());
@@ -80,13 +83,14 @@ public class ShapeViewController implements Initializable
     @FXML
     private void clearList(ActionEvent event)
     {
-        drawer.ClearQueue();
+        drawer.clearQueue();
         shapeList.getItems().clear();
     }
 
     @FXML
     private void clearCanvas(ActionEvent event)
     {
+        drawer.clearCanvas();
     }
 
 }
