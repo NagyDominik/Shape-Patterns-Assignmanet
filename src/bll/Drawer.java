@@ -5,7 +5,10 @@
  */
 package bll;
 
+import bll.Patterns.CrossPattern;
 import bll.Patterns.DrawPattern;
+import bll.Patterns.GridPattern;
+import bll.Patterns.RandomPattern;
 import java.util.ArrayList;
 import java.util.Arrays;
 import javafx.scene.canvas.GraphicsContext;
@@ -27,7 +30,6 @@ public class Drawer
     {
         shapes.addAll(Arrays.asList("Triangle", "Circle", "Rectangle"));
         patterns.addAll(Arrays.asList("Grid", "Cross", "Random"));
-        
     }
 
     public ArrayList<String> getShapesInQueue()
@@ -50,11 +52,6 @@ public class Drawer
         return patterns;
     }
 
-    public void setPattern(DrawPattern pattern)
-    {
-        this.pattern = pattern;
-    }
-
     public void addShapeToQueue(String shape, int size)
     {
         shapesInQueue.add(new Shape(shape, size));
@@ -67,15 +64,53 @@ public class Drawer
 
     public void drawShapes()
     {
+        for (Shape shape : shapesInQueue)
+        {
+            double x = pattern.getNextX();
+            double y = pattern.getNextY();
+            
+            if (shape.getName() == "Triangle")
+            {
+                double[] xPoints = {x,x+50,x+25};
+                double[] yPoints = {y,y,y+50};
+                
+                gc.beginPath();
+                gc.fillPolygon(xPoints, yPoints, 3);
+            }
+            if (shape.getName() == "Circle")
+            {
+                gc.fillOval(x, y, shape.getSize(), shape.getSize());
+            }
+            if (shape.getName() == "Rectangle")
+            {
+                gc.fillRect(x, y, shape.getSize(), shape.getSize());
+            }
+        }
     }
 
     public void clearCanvas()
     {
         gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
     }
-    
+
     public void setContext(GraphicsContext context)
     {
         this.gc = context;
+    }
+    
+   public void setPattern(String pattern)
+    {
+        if (pattern == "Random")
+        {
+            this.pattern = new RandomPattern();
+        }
+        if (pattern == "Grid")
+        {
+            this.pattern = new GridPattern();
+        }
+        if (pattern == "Cross")
+        {
+            this.pattern = new CrossPattern();
+        }
     }
 }
