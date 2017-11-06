@@ -6,6 +6,7 @@
 package gui;
 
 import bll.Drawer;
+import bll.Shape;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -30,7 +31,7 @@ public class ShapeViewController implements Initializable
     @FXML
     private Canvas Canvas;
     @FXML
-    private ListView<?> shapeList;
+    private ListView<Shape> shapeList;
     @FXML
     private TextField sizeField;
     @FXML
@@ -56,6 +57,9 @@ public class ShapeViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
+        selectedShape.getItems().addAll(drawer.getShapes());
+        selectedPattern.setValue("Asd");
+        selectedPattern.getItems().addAll(drawer.getPatterns());
     }
 
     @FXML

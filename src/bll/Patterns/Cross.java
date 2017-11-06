@@ -13,13 +13,13 @@ public class Cross implements DrawPattern
 {
 
     @Override
-    public int getNextX()
+    public double getNextX()
     {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int getNextY()
+    public double getNextY()
     {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

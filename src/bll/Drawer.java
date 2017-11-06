@@ -7,6 +7,7 @@ package bll;
 
 import bll.Patterns.DrawPattern;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -19,12 +20,30 @@ public class Drawer
     private ArrayList<String> shapes = new ArrayList();
     private ArrayList<String> patterns = new ArrayList();
 
+    public Drawer()
+    {
+        shapes.addAll(Arrays.asList("Triangle", "Circle", "Rectangle"));
+        patterns.addAll(Arrays.asList("Grid", "Cross", "Random"));
+    }
+    
+    public ArrayList<Shape> getShapesInQueue()
+    {
+        return shapesInQueue;
+    }
+
+    public ArrayList<String> getShapes()
+    {
+        return shapes;
+    }
+
+    public ArrayList<String> getPatterns()
+    {
+        return patterns;
+    }
+    
     public void setPattern(DrawPattern pattern)
     {
         this.pattern = pattern;
     }
     
-    public Drawer()
-    {
-    }
 }
