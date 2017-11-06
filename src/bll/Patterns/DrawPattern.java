@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package bll.Patterns;
 
 /**
@@ -12,7 +11,6 @@ package bll.Patterns;
  */
 public interface DrawPattern
 {    
-    
     /**Returns the X coordinate of the next point where we can place a shape**/
     public double getNextX();
     

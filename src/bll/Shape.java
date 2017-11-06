@@ -5,15 +5,12 @@
  */
 package bll;
 
-
-
 /**
  *
  * @author Dominik
  */
 public class Shape
 {
-   
     String Name;
     int size;
 }
