@@ -9,12 +9,14 @@ import bll.Patterns.DrawPattern;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+
 /**
  *
  * @author Dominik
  */
 public class Drawer
 {
+   
     private DrawPattern pattern;
     private ArrayList<Shape> shapesInQueue = new ArrayList();
     private ArrayList<String> shapes = new ArrayList();
