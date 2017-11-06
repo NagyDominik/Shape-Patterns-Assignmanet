@@ -61,12 +61,6 @@ public class ShapeViewController implements Initializable
         selectedShape.getItems().addAll(drawer.getShapes());
         selectedPattern.setValue("Asd");
         selectedPattern.getItems().addAll(drawer.getPatterns());
-        RandomPattern rand = new RandomPattern();
-        for (int i=0;i<10;i++)
-        {
-        System.out.println(rand.getNextX());
-        System.out.println(rand.getNextY());
-        }
     }
 
     @FXML
