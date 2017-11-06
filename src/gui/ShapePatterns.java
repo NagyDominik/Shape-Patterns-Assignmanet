@@ -26,6 +26,7 @@ public class ShapePatterns extends Application
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
+        stage.setTitle("Shape Patterns Assignment");
         stage.show();
     }
 

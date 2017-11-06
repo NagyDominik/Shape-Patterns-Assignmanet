@@ -13,9 +13,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -31,13 +30,13 @@ public class ShapeViewController implements Initializable
     @FXML
     private Canvas Canvas;
     @FXML
-    private ListView<Shape> shapeList;
+    private ListView<String> shapeList;
     @FXML
     private TextField sizeField;
     @FXML
-    private ChoiceBox<String> selectedShape;
+    private ComboBox<String> selectedShape;
     @FXML
-    private ChoiceBox<String> selectedPattern;
+    private ComboBox<String> selectedPattern;
     @FXML
     private Button addShapebtn;
     @FXML
@@ -58,13 +57,17 @@ public class ShapeViewController implements Initializable
     public void initialize(URL url, ResourceBundle rb)
     {
         selectedShape.getItems().addAll(drawer.getShapes());
-        selectedPattern.setValue("Asd");
+        selectedShape.getSelectionModel().selectFirst();
         selectedPattern.getItems().addAll(drawer.getPatterns());
+        selectedPattern.getSelectionModel().selectFirst();
     }
 
     @FXML
     private void addShape(ActionEvent event)
     {
+        drawer.addShapeToQueue(selectedShape.getValue(), Integer.parseInt(sizeField.getText()));
+        shapeList.getItems().clear();
+        shapeList.getItems().addAll(drawer.getShapesInQueue());
     }
 
     @FXML
@@ -75,6 +78,8 @@ public class ShapeViewController implements Initializable
     @FXML
     private void clearList(ActionEvent event)
     {
+        drawer.ClearQueue();
+        shapeList.getItems().clear();
     }
 
     @FXML
