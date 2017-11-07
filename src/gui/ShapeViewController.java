@@ -5,7 +5,7 @@
  */
 package gui;
 
-import bll.Drawer;
+import bll.LogicController;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -47,7 +47,7 @@ public class ShapeViewController implements Initializable
     private Button clearCanvasbtn;
     private ColorPicker selectColor;
     
-    private Drawer drawer;
+    private LogicController drawer;
     @FXML
     private ColorPicker selectedColor;
 
@@ -59,7 +59,7 @@ public class ShapeViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        drawer = new Drawer();
+        drawer = new LogicController();
         drawer.setContext(Canvas.getGraphicsContext2D());
         
         selectedShape.getItems().addAll(drawer.getShapes());

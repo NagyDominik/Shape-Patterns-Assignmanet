@@ -18,7 +18,7 @@ import javafx.scene.paint.Color;
  *
  * @author Dominik
  */
-public class Drawer
+public class LogicController
 {
 
     private DrawPattern pattern;
@@ -28,7 +28,7 @@ public class Drawer
     GraphicsContext gc;
     private Color drawColor;
 
-    public Drawer()
+    public LogicController()
     {
         shapes.addAll(Arrays.asList("Triangle", "Circle", "Rectangle"));
         patterns.addAll(Arrays.asList("Grid", "Cross", "Random"));
