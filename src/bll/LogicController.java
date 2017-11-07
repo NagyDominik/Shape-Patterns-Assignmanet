@@ -20,13 +20,11 @@ import javafx.scene.paint.Color;
  */
 public class LogicController
 {
-
     private DrawPattern pattern;
-    private ArrayList<Shape> shapesInQueue = new ArrayList();
     private ArrayList<String> shapes = new ArrayList();
     private ArrayList<String> patterns = new ArrayList();
-    GraphicsContext gc;
-    private Color drawColor;
+    private ShapeDrawer shapedrawer = new ShapeDrawer();
+    private ArrayList<Shape> shapesInQueue = new ArrayList();
 
     public LogicController()
     {
@@ -34,12 +32,34 @@ public class LogicController
         patterns.addAll(Arrays.asList("Grid", "Cross", "Random"));
     }
 
+    public void draw()
+    {
+        for (Shape shape : shapesInQueue)
+        {
+            double x = pattern.getNextX();
+            double y = pattern.getNextY();
+
+            if (shape.getName() == "Triangle")
+            {
+                shapedrawer.drawTriangle(x, y, shape.getSize(),shape.getColor());
+            }
+            if (shape.getName() == "Circle")
+            {
+                shapedrawer.drawCircle(x, y, shape.getSize(), shape.getColor());
+            }
+            if (shape.getName() == "Rectangle")
+            {
+                shapedrawer.drawRect(x, y, shape.getSize(), shape.getColor());
+            }
+        }
+    }
+
     public ArrayList<String> getShapesInQueue()
     {
         ArrayList<String> shapesAsString = new ArrayList();
         for (Shape shape : shapesInQueue)
         {
-            shapesAsString.add(shape.getName() + " " + shape.getSize());
+            shapesAsString.add(shape.getName() + " " + shape.getSize() + " " + shape.getColor());
         }
         return shapesAsString;
     }
@@ -54,9 +74,9 @@ public class LogicController
         return patterns;
     }
 
-    public void addShapeToQueue(String shape, int size)
+    public void addShapeToQueue(String shape, int size, Color color)
     {
-        shapesInQueue.add(new Shape(shape, size));
+        this.shapesInQueue.add(new Shape(shape, size, color));
     }
 
     public void clearQueue()
@@ -64,43 +84,16 @@ public class LogicController
         shapesInQueue.clear();
     }
 
-    public void drawShapes()
-    {
-        for (Shape shape : shapesInQueue)
-        {
-            double x = pattern.getNextX();
-            double y = pattern.getNextY();
-            gc.setFill(drawColor);
-            
-            if (shape.getName() == "Triangle")
-            {
-                double[] xPoints = {x,x+shape.getSize(),x+shape.getSize()/2};
-                double[] yPoints = {y,y,y+shape.getSize()};
-                
-                gc.beginPath();
-                gc.fillPolygon(xPoints, yPoints, 3);
-            }
-            if (shape.getName() == "Circle")
-            {
-                gc.fillOval(x, y, shape.getSize(), shape.getSize());
-            }
-            if (shape.getName() == "Rectangle")
-            {
-                gc.fillRect(x, y, shape.getSize(), shape.getSize());
-            }
-        }
-    }
-
     public void clearCanvas()
     {
-        gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
+        shapedrawer.clearCanvas();
     }
 
     public void setContext(GraphicsContext context)
     {
-        this.gc = context;
+        shapedrawer.setContext(context);
     }
-    
+
     public void setPattern(String pattern)
     {
         if (pattern == "Random")
@@ -115,10 +108,5 @@ public class LogicController
         {
             this.pattern = new CrossPattern();
         }
-    }
-   
-    public void setColor(Color color)
-    {
-        this.drawColor = color;
     }
 }

@@ -45,11 +45,10 @@ public class ShapeViewController implements Initializable
     private Button clearListbtn;
     @FXML
     private Button clearCanvasbtn;
-    private ColorPicker selectColor;
-    
-    private LogicController drawer;
     @FXML
     private ColorPicker selectedColor;
+    
+    private LogicController drawer;
 
     public ShapeViewController()
     {
@@ -71,7 +70,7 @@ public class ShapeViewController implements Initializable
     @FXML
     private void addShape(ActionEvent event)
     {
-        drawer.addShapeToQueue(selectedShape.getValue(), Integer.parseInt(sizeField.getText()));
+        drawer.addShapeToQueue(selectedShape.getValue(), Integer.parseInt(sizeField.getText()), selectedColor.getValue());
         shapeList.getItems().clear();
         shapeList.getItems().addAll(drawer.getShapesInQueue());
     }
@@ -80,8 +79,7 @@ public class ShapeViewController implements Initializable
     private void drawShapes(ActionEvent event)
     {
         drawer.setPattern(selectedPattern.getValue());
-        drawer.setColor(selectedColor.getValue());
-        drawer.drawShapes();
+        drawer.draw();
     }
 
     @FXML

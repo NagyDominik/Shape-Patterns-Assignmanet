@@ -5,6 +5,8 @@
  */
 package bll;
 
+import javafx.scene.paint.Color;
+
 /**
  *
  * @author Dominik
@@ -13,11 +15,13 @@ public class Shape
 {
     String Name;
     int size;
+    Color color;
 
-    public Shape(String Name, int size)
+    public Shape(String Name, int size, Color color)
     {
         this.Name = Name;
         this.size = size;
+        this.color = color;
     }
 
     public String getName()
@@ -28,6 +32,11 @@ public class Shape
     public int getSize()
     {
         return size;
+    }
+
+    public Color getColor()
+    {
+        return color;
     }
     
 }
