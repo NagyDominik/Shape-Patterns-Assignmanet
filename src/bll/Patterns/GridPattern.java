@@ -5,9 +5,7 @@
  */
 package bll.Patterns;
 
-import java.util.ArrayList;
-
-
+import bll.Coordinates;
 
 /**
  *
@@ -51,6 +49,12 @@ public class GridPattern implements DrawPattern
    
 
     
+
+    @Override
+    public Coordinates getCoordinates()
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     @Override
     public double getNextX()
