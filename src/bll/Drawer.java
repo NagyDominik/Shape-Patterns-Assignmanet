@@ -71,8 +71,8 @@ public class Drawer
             
             if (shape.getName() == "Triangle")
             {
-                double[] xPoints = {x,x+50,x+25};
-                double[] yPoints = {y,y,y+50};
+                double[] xPoints = {x,x+shape.getSize(),x+shape.getSize()/2};
+                double[] yPoints = {y,y,y+shape.getSize()};
                 
                 gc.beginPath();
                 gc.fillPolygon(xPoints, yPoints, 3);
