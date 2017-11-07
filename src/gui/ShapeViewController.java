@@ -84,6 +84,7 @@ public class ShapeViewController implements Initializable
     @FXML
     private void clearList(ActionEvent event)
     {
+        
         drawer.clearQueue();
         shapeList.getItems().clear();
     }

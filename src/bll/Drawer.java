@@ -98,7 +98,7 @@ public class Drawer
         this.gc = context;
     }
     
-   public void setPattern(String pattern)
+    public void setPattern(String pattern)
     {
         if (pattern == "Random")
         {

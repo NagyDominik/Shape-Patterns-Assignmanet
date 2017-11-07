@@ -14,13 +14,13 @@ public class CrossPattern implements DrawPattern
     @Override
     public double getNextX()
     {
-        return -1;
+        double[][] crossX = new double[11][11];
     }
 
     @Override
     public double getNextY()
     {
-     return -1;
+     double[][] crossY = new double[10][10];
     }
     
 }
