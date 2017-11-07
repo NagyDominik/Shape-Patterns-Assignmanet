@@ -12,6 +12,7 @@ import bll.Patterns.RandomPattern;
 import java.util.ArrayList;
 import java.util.Arrays;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
 
 /**
  *
@@ -25,6 +26,7 @@ public class Drawer
     private ArrayList<String> shapes = new ArrayList();
     private ArrayList<String> patterns = new ArrayList();
     GraphicsContext gc;
+    private Color drawColor;
 
     public Drawer()
     {
@@ -68,6 +70,7 @@ public class Drawer
         {
             double x = pattern.getNextX();
             double y = pattern.getNextY();
+            gc.setFill(drawColor);
             
             if (shape.getName() == "Triangle")
             {
@@ -98,7 +101,7 @@ public class Drawer
         this.gc = context;
     }
     
-   public void setPattern(String pattern)
+    public void setPattern(String pattern)
     {
         if (pattern == "Random")
         {
@@ -112,5 +115,10 @@ public class Drawer
         {
             this.pattern = new CrossPattern();
         }
+    }
+   
+    public void setColor(Color color)
+    {
+        this.drawColor = color;
     }
 }
