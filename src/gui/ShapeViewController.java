@@ -5,15 +5,15 @@
  */
 package gui;
 
-import bll.Drawer;
+import bll.LogicController;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -45,8 +45,11 @@ public class ShapeViewController implements Initializable
     private Button clearListbtn;
     @FXML
     private Button clearCanvasbtn;
-
-    private Drawer drawer;
+    private ColorPicker selectColor;
+    
+    private LogicController drawer;
+    @FXML
+    private ColorPicker selectedColor;
 
     public ShapeViewController()
     {
@@ -56,13 +59,12 @@ public class ShapeViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        drawer = new Drawer();
+        drawer = new LogicController();
         drawer.setContext(Canvas.getGraphicsContext2D());
         
         selectedShape.getItems().addAll(drawer.getShapes());
         selectedShape.getSelectionModel().selectFirst();
         selectedPattern.getItems().addAll(drawer.getPatterns());
-
         selectedPattern.getSelectionModel().selectFirst();
     }
 
@@ -78,6 +80,7 @@ public class ShapeViewController implements Initializable
     private void drawShapes(ActionEvent event)
     {
         drawer.setPattern(selectedPattern.getValue());
+        drawer.setColor(selectedColor.getValue());
         drawer.drawShapes();
     }
 

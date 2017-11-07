@@ -12,12 +12,13 @@ import bll.Patterns.RandomPattern;
 import java.util.ArrayList;
 import java.util.Arrays;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
 
 /**
  *
  * @author Dominik
  */
-public class Drawer
+public class LogicController
 {
 
     private DrawPattern pattern;
@@ -25,8 +26,9 @@ public class Drawer
     private ArrayList<String> shapes = new ArrayList();
     private ArrayList<String> patterns = new ArrayList();
     GraphicsContext gc;
+    private Color drawColor;
 
-    public Drawer()
+    public LogicController()
     {
         shapes.addAll(Arrays.asList("Triangle", "Circle", "Rectangle"));
         patterns.addAll(Arrays.asList("Grid", "Cross", "Random"));
@@ -68,6 +70,7 @@ public class Drawer
         {
             double x = pattern.getNextX();
             double y = pattern.getNextY();
+            gc.setFill(drawColor);
             
             if (shape.getName() == "Triangle")
             {
@@ -112,5 +115,10 @@ public class Drawer
         {
             this.pattern = new CrossPattern();
         }
+    }
+   
+    public void setColor(Color color)
+    {
+        this.drawColor = color;
     }
 }
