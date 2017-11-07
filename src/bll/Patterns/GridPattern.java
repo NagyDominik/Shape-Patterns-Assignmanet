@@ -5,6 +5,8 @@
  */
 package bll.Patterns;
 
+import bll.Coordinates;
+
 /**
  *
  * @author Dominik
@@ -44,15 +46,21 @@ public class GridPattern implements DrawPattern
     }
 
     @Override
+    public Coordinates getCoordinates()
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
     public double getNextX()
     {
-     return getX();
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public double getNextY()
     {
-      return getY();
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     

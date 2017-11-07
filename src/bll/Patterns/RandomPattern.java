@@ -5,6 +5,7 @@
  */
 package bll.Patterns;
 
+import bll.Coordinates;
 import java.util.Random;
 
 /**
@@ -26,6 +27,13 @@ public class RandomPattern implements DrawPattern
     public double getNextY()
     {
         return rand.nextDouble() * 488;
+    }
+
+    @Override
+    public Coordinates getCoordinates()
+    {
+        Coordinates coordinates = new Coordinates(rand.nextDouble() * 486, rand.nextDouble() * 488);
+        return coordinates;
     }
 
 }

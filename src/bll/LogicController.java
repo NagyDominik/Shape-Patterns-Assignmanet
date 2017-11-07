@@ -20,6 +20,7 @@ import javafx.scene.paint.Color;
  */
 public class LogicController
 {
+
     private DrawPattern pattern;
     private ArrayList<String> shapes = new ArrayList();
     private ArrayList<String> patterns = new ArrayList();
@@ -36,20 +37,21 @@ public class LogicController
     {
         for (Shape shape : shapesInQueue)
         {
-            double x = pattern.getNextX();
-            double y = pattern.getNextY();
-
-            if (shape.getName() == "Triangle")
+            Coordinates coord = pattern.getCoordinates();
+            if (coord.getX() != 0 && coord.getY() != 0)
             {
-                shapedrawer.drawTriangle(x, y, shape.getSize(),shape.getColor());
-            }
-            if (shape.getName() == "Circle")
-            {
-                shapedrawer.drawCircle(x, y, shape.getSize(), shape.getColor());
-            }
-            if (shape.getName() == "Rectangle")
-            {
-                shapedrawer.drawRect(x, y, shape.getSize(), shape.getColor());
+                if (shape.getName() == "Triangle")
+                {
+                    shapedrawer.drawTriangle(coord.getX(), coord.getY(), shape.getSize(), shape.getColor());
+                }
+                if (shape.getName() == "Circle")
+                {
+                    shapedrawer.drawCircle(coord.getX(), coord.getY(), shape.getSize(), shape.getColor());
+                }
+                if (shape.getName() == "Rectangle")
+                {
+                    shapedrawer.drawRect(coord.getX(), coord.getY(), shape.getSize(), shape.getColor());
+                }
             }
         }
     }
