@@ -22,7 +22,7 @@ public class CrossPattern implements DrawPattern
     public CrossPattern()
     {
         fillCoordinates();
-        fillReturn();
+       fillReturn();
     }
 
     @Override
@@ -67,7 +67,7 @@ public class CrossPattern implements DrawPattern
             }
         }
     }
-
+    
     private void fillReturn()
     {
         for (int i = 0; i < 11; i++)

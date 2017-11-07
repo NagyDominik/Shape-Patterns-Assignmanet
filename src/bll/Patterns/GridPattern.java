@@ -6,6 +6,7 @@
 package bll.Patterns;
 
 import bll.Coordinates;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,60 +14,62 @@ import bll.Coordinates;
  */
 public class GridPattern implements DrawPattern
 {
-    double rX;
-    double rY;
+    Coordinates[][] coordinates = new Coordinates[11][11];
+    private ArrayList<Coordinates> returnList = new ArrayList();
+    private int coordCount = -1;
     
-    public double giveX()
+    public GridPattern()
     {
-        double[][] myX = new double[10][10];
-        
-        for(int l = 0; l<myX.length;l++)
-        {
-        for(int i =0; i<myX.length;i++)  
-        {
-            myX[i][l] = 5+48*i;
-            rX=myX[i][l];
-            
-        }
-        }
-        return rX;
+        fillXY();
+       fillReturn();
     }
-    public double giveY()
+    public void fillXY()
     {
-        double[][] myY = new double[10][10];
-        
-        for(int l = 0; l<myY.length;l++)
+           for(int l = 0; l<10;l++)
         {
-        for(int i =0; i<myY.length;i++)  
+        for(int i =0; i<10;i++)  
         {
-            myY[i][l] = 5+48*l;
-             rY=myY[i][l];
-            
+            coordinates[i][l] = new Coordinates(5+48*l,5+48*i);     
         }
-        }
-        return rY;
+  }                  
     }
-   
-
     
-
     @Override
     public Coordinates getCoordinates()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        coordCount++;
+        if (coordCount < returnList.size())
+        {
+            return returnList.get(coordCount);
+        }
+        return new Coordinates(0,0);
     }
 
     @Override
     public double getNextX()
     {
-     return giveX();
+        double[][] myX = new double[10][10];
+     return 1;
     }
 
     @Override
     public double getNextY()
     {
-      return giveY();
+        double[][] myY = new double[10][10];
+      return -1;
     }
-
+private void fillReturn()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            for (int j = 0; j < 10; j++)
+            {
+                if (coordinates[i][j] != null)
+                {
+                    returnList.add(coordinates[i][j]);
+                }
+            }
+        }
+    }
     
 }
