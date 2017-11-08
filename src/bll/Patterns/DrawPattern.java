@@ -5,21 +5,15 @@
  */
 package bll.Patterns;
 
-import bll.Coordinates;
+import bll.Coordinate;
 
 /**
  *
  * @author Dominik
  */
 public interface DrawPattern
-{    
-    /**Returns the X coordinate of the next point where we can place a shape**/
-    public double getNextX();
-    
-    /**Returns the Y coordinate of the next point where we can place a shape**/
-    public double getNextY();
-    
-    /**Returns the X and Y coordinates of the next point where we can place a shape**/
-    public Coordinates getCoordinates();
+{        
+    /**Returns the X and Y coordinates of the next point (as a Coordinate class) where we can place the next shape**/
+    public Coordinate getCoordinates();
     
 }

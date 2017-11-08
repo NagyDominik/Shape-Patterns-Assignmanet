@@ -5,34 +5,28 @@
  */
 package bll.Patterns;
 
-import bll.Coordinates;
+import bll.Coordinate;
 import java.util.Random;
 
 /**
  *
- * @author Tomasz
+ * @author Dominik
  */
 public class RandomPattern implements DrawPattern
 {
 
     Random rand = new Random();
-
+    
+    /**
+     * Returns random a coordinate.
+     * The number 486 and 488 represents the width and height of the drawing canvas.
+     * 
+     * @return Coordinate
+     */
     @Override
-    public double getNextX()
+    public Coordinate getCoordinates()
     {
-        return rand.nextDouble() * 486;
-    }
-
-    @Override
-    public double getNextY()
-    {
-        return rand.nextDouble() * 488;
-    }
-
-    @Override
-    public Coordinates getCoordinates()
-    {
-        Coordinates coordinates = new Coordinates(rand.nextDouble() * 486, rand.nextDouble() * 488);
+        Coordinate coordinates = new Coordinate(rand.nextDouble() * 486, rand.nextDouble() * 488);
         return coordinates;
     }
 

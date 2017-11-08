@@ -5,7 +5,7 @@
  */
 package bll.Patterns;
 
-import bll.Coordinates;
+import bll.Coordinate;
 import java.util.ArrayList;
 
 /**
@@ -14,51 +14,53 @@ import java.util.ArrayList;
  */
 public class GridPattern implements DrawPattern
 {
-    Coordinates[][] coordinates = new Coordinates[11][11];
-    private ArrayList<Coordinates> returnList = new ArrayList();
+
+    Coordinate[][] coordinates = new Coordinate[11][11];
+    private ArrayList<Coordinate> returnList = new ArrayList();
     private int coordCount = -1;
-    
+
     public GridPattern()
     {
         fillXY();
-       fillReturn();
+        fillReturn();
     }
+
+    /**
+     * Fills the cells of the coordinates array with coordinates.
+     * The coordinates start from (5, 5) and the number 44 represents
+     * 1/11 of the width and height of the drawing canvas.
+     */
     public void fillXY()
     {
-           for(int l = 0; l<10;l++)
+        for (int l = 0; l < 11; l++)
         {
-        for(int i =0; i<10;i++)  
-        {
-            coordinates[i][l] = new Coordinates(5+48*l,5+48*i);     
+            for (int i = 0; i < 11; i++)
+            {
+                coordinates[i][l] = new Coordinate(5 + 44 * l, 5 + 44 * i);
+            }
         }
-  }                  
     }
     
+    /**
+     * Returns the next available coordinate.
+     * 
+     * @return Coordinate
+     */
     @Override
-    public Coordinates getCoordinates()
+    public Coordinate getCoordinates()
     {
         coordCount++;
         if (coordCount < returnList.size())
         {
             return returnList.get(coordCount);
         }
-        return new Coordinates(0,0);
+        return new Coordinate(0, 0);
     }
-
-    @Override
-    public double getNextX()
-    {
-        double[][] myX = new double[10][10];
-     return 1;
-    }
-
-    @Override
-    public double getNextY()
-    {
-        double[][] myY = new double[10][10];
-      return -1;
-    }
-private void fillReturn()
+    
+    /**
+     * Fills a list with the available coordinates.
+     */
+    private void fillReturn()
     {
         for (int i = 0; i < 10; i++)
         {
@@ -71,5 +73,5 @@ private void fillReturn()
             }
         }
     }
-    
+
 }

@@ -5,7 +5,7 @@
  */
 package bll.Patterns;
 
-import bll.Coordinates;
+import bll.Coordinate;
 import java.util.ArrayList;
 
 /**
@@ -15,41 +15,37 @@ import java.util.ArrayList;
 public class CrossPattern implements DrawPattern
 {
 
-    private Coordinates[][] coordinates = new Coordinates[11][11];
-    private ArrayList<Coordinates> returnList = new ArrayList();
+    private Coordinate[][] coordinates = new Coordinate[11][11];
+    private ArrayList<Coordinate> returnList = new ArrayList();
     private int coordCount = -1;
 
     public CrossPattern()
     {
-        fillCoordinates();
+       fillCoordinates();
        fillReturn();
     }
-
+    
+    /**
+     * Returns the next available coordinate.
+     * 
+     * @return Coordinate
+     */
     @Override
-    public double getNextX()
-    {
-      double[][] crossX = new double[11][11];
-      return -1;
-    }
-
-    @Override
-    public double getNextY()
-    {
-        double[][] crossY = new double[10][10];
-        return 1;
-    }
-
-    @Override
-    public Coordinates getCoordinates()
+    public Coordinate getCoordinates()
     {
         coordCount++;
         if (coordCount < returnList.size())
         {
             return returnList.get(coordCount);
         }
-        return new Coordinates(0,0);
+        return new Coordinate(0,0);
     }
-
+    
+    /**
+     * Fills the appropriate cells of the coordinates array with coordinates.
+     * The coordinates start from (5, 5) and the number 44 represents
+     * 1/11 of the width of the drawing canvas.
+     */
     private void fillCoordinates()
     {
         for (int i = 0; i < 11; i++)
@@ -59,15 +55,18 @@ public class CrossPattern implements DrawPattern
             {
                 for (j = 0; j < 11; j++)
                 {
-                    coordinates[i][j] = new Coordinates(5 + (46 * i), 5 + (j * 44));
+                    coordinates[i][j] = new Coordinate(5 + (44 * i), 5 + (j * 44));
                 }
             } else
             {
-                coordinates[i][j] = new Coordinates(5 + (46 * i), 5 + (j * 44));
+                coordinates[i][j] = new Coordinate(5 + (44 * i), 5 + (j * 44));
             }
         }
     }
     
+    /**
+     * Fills a list with the available coordinates.
+     */
     private void fillReturn()
     {
         for (int i = 0; i < 11; i++)

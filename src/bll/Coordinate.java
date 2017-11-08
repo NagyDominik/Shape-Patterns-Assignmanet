@@ -9,7 +9,7 @@ package bll;
  *
  * @author Dominik
  */
-public class Coordinates
+public class Coordinate
 {
 
     public double getX()
@@ -24,7 +24,7 @@ public class Coordinates
     double x;
     double y;
 
-    public Coordinates(double x, double y)
+    public Coordinate(double x, double y)
     {
         this.x = x;
         this.y = y;

@@ -49,12 +49,14 @@ public class ShapeViewController implements Initializable
     private ColorPicker selectedColor;
     
     private LogicController drawer;
-
-    public ShapeViewController()
-    {
-        
-    }
-
+    
+    /**
+     * The initialization method of the application.
+     * Sets the GraphicsContext for the drawer and fills ComboBoxes on the user interface with the selectable options.
+     * 
+     * @param url
+     * @param rb 
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
@@ -66,7 +68,12 @@ public class ShapeViewController implements Initializable
         selectedPattern.getItems().addAll(drawer.getPatterns());
         selectedPattern.getSelectionModel().selectFirst();
     }
-
+    
+    /**
+     * Adds the new shapes to the drawing queue and to the display list of the shapes.
+     * 
+     * @param event 
+     */
     @FXML
     private void addShape(ActionEvent event)
     {

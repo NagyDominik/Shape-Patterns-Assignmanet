@@ -17,19 +17,42 @@ public class ShapeDrawer
 
     GraphicsContext gc;
     
-
+    /**
+     * Method for drawing a circle at the (x, y) position with the given size and color.
+     * 
+     * @param x
+     * @param y
+     * @param size
+     * @param color 
+     */
     public void drawCircle(double x, double y, int size, Color color)
     {
         gc.setFill(color);
         gc.fillOval(x, y, size, size);
     }
     
+    /**
+     * Method for drawing a rectangle at the (x, y) position with the given size and color.
+     * 
+     * @param x
+     * @param y
+     * @param size
+     * @param color 
+     */
     public void drawRect(double x, double y, int size, Color color)
     {
         gc.setFill(color);
         gc.fillRect(x, y, size, size);
     }
     
+    /**
+     * Method for drawing a triangle at the (x, y) position with the given size and color.
+     * 
+     * @param x
+     * @param y
+     * @param size
+     * @param color 
+     */
     public void drawTriangle(double x, double y, int size, Color color)
     {
         gc.setFill(color);
