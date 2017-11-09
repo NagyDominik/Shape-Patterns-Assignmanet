@@ -5,8 +5,10 @@
  */
 package bll;
 
+import java.util.Random;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+//import java.awt.Color;
 
 /**
  *
@@ -14,7 +16,9 @@ import javafx.scene.paint.Color;
  */
 public class ShapeDrawer
 {
-
+    Random rand = new Random ();
+   
+    
     GraphicsContext gc;
     
     /**
@@ -26,8 +30,7 @@ public class ShapeDrawer
      * @param color 
      */
     public void drawCircle(double x, double y, int size, Color color)
-    {
-        gc.setFill(color);
+    {   gc.setFill(color);
         gc.fillOval(x, y, size, size);
     }
     
@@ -40,7 +43,7 @@ public class ShapeDrawer
      * @param color 
      */
     public void drawRect(double x, double y, int size, Color color)
-    {
+    {     
         gc.setFill(color);
         gc.fillRect(x, y, size, size);
     }
@@ -54,14 +57,25 @@ public class ShapeDrawer
      * @param color 
      */
     public void drawTriangle(double x, double y, int size, Color color)
-    {
-        gc.setFill(color);
+    {   gc.setFill(color);
         double[] xPoints = {x, x + size, x + size / 2};
         double[] yPoints = {y, y, y + size};
         gc.beginPath();
         gc.fillPolygon(xPoints, yPoints, 3);
     }
-
+    public void drawStar(double x, double y, int size, Color color)
+    {
+        int halfSize = size/2;
+        
+        gc.setFill(color);
+        double[] xPoints = {x, x + size, x + halfSize};
+        double[] yPoints = {y + halfSize, y + halfSize, y + ((size*2) - halfSize)};
+        double[] xPoints2 = {x , x + size, x + halfSize};
+        double[] yPoints2 = {y + size + size/5, y + size/5 + size , y + size/5};
+        gc.beginPath();
+        gc.fillPolygon(xPoints, yPoints, 3);
+        gc.fillPolygon(xPoints2, yPoints2, 3);
+    }
     public void setContext(GraphicsContext gc)
     {
         this.gc = gc;

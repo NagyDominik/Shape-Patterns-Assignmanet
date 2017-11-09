@@ -2,6 +2,7 @@
 
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -31,5 +32,6 @@
       <ComboBox fx:id="selectedShape" layoutX="14.0" layoutY="33.0" prefHeight="25.0" prefWidth="103.0" />
       <ComboBox fx:id="selectedPattern" layoutX="289.0" layoutY="539.0" prefHeight="25.0" prefWidth="103.0" />
       <ColorPicker fx:id="selectedColor" layoutX="14.0" layoutY="429.0" prefHeight="25.0" prefWidth="103.0" />
+      <CheckBox fx:id="randColor" layoutX="16.0" layoutY="461.0" mnemonicParsing="false" text="Random Color" />
    </children>
 </AnchorPane>

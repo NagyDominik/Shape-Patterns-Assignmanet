@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -49,6 +50,8 @@ public class ShapeViewController implements Initializable
     private ColorPicker selectedColor;
     
     private LogicController drawer;
+    @FXML
+    private CheckBox randColor;
     
     /**
      * The initialization method of the application.
@@ -77,9 +80,16 @@ public class ShapeViewController implements Initializable
     @FXML
     private void addShape(ActionEvent event)
     {
+        if(randColor.isSelected())
+        {
+        drawer.addShapeToQueue(selectedShape.getValue(), Integer.parseInt(sizeField.getText()), drawer.getRandomColor());
+        }else{
         drawer.addShapeToQueue(selectedShape.getValue(), Integer.parseInt(sizeField.getText()), selectedColor.getValue());
+        }
         shapeList.getItems().clear();
         shapeList.getItems().addAll(drawer.getShapesInQueue());
+        
+        
     }
 
     @FXML
