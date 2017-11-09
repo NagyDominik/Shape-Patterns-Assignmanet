@@ -12,8 +12,12 @@ import bll.Coordinate;
  * @author Dominik
  */
 public interface DrawPattern
-{        
-    /**Returns the X and Y coordinates of the next point (as a Coordinate class) where we can place the next shape**/
+{
+
+    /**
+     * Returns the X and Y coordinates of the next point (as a Coordinate class)
+     * where we can place the next shape*
+     */
     public Coordinate getCoordinates();
-    
+
 }

@@ -16,11 +16,11 @@ public class RandomPattern implements DrawPattern
 {
 
     Random rand = new Random();
-    
+
     /**
-     * Returns random a coordinate.
-     * The number 486 and 488 represents the width and height of the drawing canvas.
-     * 
+     * Returns random a coordinate. The number 486 and 488 represents the width
+     * and height of the drawing canvas.
+     *
      * @return Coordinate
      */
     @Override

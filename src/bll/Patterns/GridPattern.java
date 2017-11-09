@@ -26,9 +26,9 @@ public class GridPattern implements DrawPattern
     }
 
     /**
-     * Fills the cells of the coordinates array with coordinates.
-     * The coordinates start from (5, 5) and the number 44 represents
-     * 1/11 of the width and height of the drawing canvas.
+     * Fills the cells of the coordinates array with coordinates. The
+     * coordinates start from (5, 5) and the number 44 represents 1/11 of the
+     * width and height of the drawing canvas.
      */
     public void fillXY()
     {
@@ -40,10 +40,10 @@ public class GridPattern implements DrawPattern
             }
         }
     }
-    
+
     /**
      * Returns the next available coordinate.
-     * 
+     *
      * @return Coordinate
      */
     @Override
@@ -56,7 +56,7 @@ public class GridPattern implements DrawPattern
         }
         return new Coordinate(0, 0);
     }
-    
+
     /**
      * Fills a list with the available coordinates.
      */

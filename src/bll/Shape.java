@@ -13,6 +13,7 @@ import javafx.scene.paint.Color;
  */
 public class Shape
 {
+
     String Name;
     int size;
     Color color;
@@ -38,5 +39,5 @@ public class Shape
     {
         return color;
     }
-    
+
 }

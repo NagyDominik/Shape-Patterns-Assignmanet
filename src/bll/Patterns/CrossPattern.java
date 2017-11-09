@@ -21,13 +21,13 @@ public class CrossPattern implements DrawPattern
 
     public CrossPattern()
     {
-       fillCoordinates();
-       fillReturn();
+        fillCoordinates();
+        fillReturn();
     }
-    
+
     /**
      * Returns the next available coordinate.
-     * 
+     *
      * @return Coordinate
      */
     @Override
@@ -38,13 +38,13 @@ public class CrossPattern implements DrawPattern
         {
             return returnList.get(coordCount);
         }
-        return new Coordinate(0,0);
+        return new Coordinate(0, 0);
     }
-    
+
     /**
      * Fills the appropriate cells of the coordinates array with coordinates.
-     * The coordinates start from (5, 5) and the number 44 represents
-     * 1/11 of the width of the drawing canvas.
+     * The coordinates start from (5, 5) and the number 44 represents 1/11 of
+     * the width of the drawing canvas.
      */
     private void fillCoordinates()
     {
@@ -63,7 +63,7 @@ public class CrossPattern implements DrawPattern
             }
         }
     }
-    
+
     /**
      * Fills a list with the available coordinates.
      */
